@@ -9,7 +9,7 @@ function Cabins() {
   //   getCabins().then((data) => console.log(data));
   // }, []);
 
-  // Replace useEffect fetching with ReactQuery
+  // Replace useEffect fetching data with ReactQuery in CabinTable
 
   return (
     <>
