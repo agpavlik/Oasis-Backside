@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 
 export function useOutsideClick(handler, listenCapturing = true) {
+  // Whenever the click event happens outside of StyledModal,
+  // then manually select this element using a ref.
+  // First of all, check if ref exists, check ref.current,
+  // where the DOM node will be stored.
   const ref = useRef();
 
   useEffect(
@@ -10,7 +14,7 @@ export function useOutsideClick(handler, listenCapturing = true) {
           handler();
         }
       }
-
+      //event listener for any click events
       document.addEventListener("click", handleClick, listenCapturing);
 
       return () =>

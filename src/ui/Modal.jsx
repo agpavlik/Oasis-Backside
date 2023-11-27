@@ -67,7 +67,7 @@ const Button = styled.button`
 //   );
 // }
 
-// Converting the Modal to a Compound Component.
+// Converting the Modal to a Compound Component - 4 steps
 
 // 1 Step - Create a new context
 const ModalContext = createContext();
