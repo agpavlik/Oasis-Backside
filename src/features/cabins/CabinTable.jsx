@@ -31,6 +31,14 @@ function CabinTable() {
   if (filterValue === "with-discount")
     filteredCabins = cabins.filter((cabin) => cabin.discount > 0);
 
+  // SORT
+  const sortBy = searchParams.get("sortBy") || "startDate-asc";
+  const [field, direction] = sortBy.split("-");
+  const modifier = direction === "asc" ? 1 : -1;
+  const sortedCabins = filteredCabins.sort(
+    (a, b) => (a[field] - b[field]) * modifier
+  );
+
   // Give elements here the 'role' of a row, and the role of a table.
   // So this is just to make the HTML a bit more accessible, because
   // this will actually function as a table, but we do implement it
@@ -49,8 +57,8 @@ function CabinTable() {
           <div></div>
         </Table.Header>
         <Table.Body
-          // data={cabins}
-          data={filteredCabins}
+          // data={filteredCabins}
+          data={sortedCabins}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />
       </Table>
