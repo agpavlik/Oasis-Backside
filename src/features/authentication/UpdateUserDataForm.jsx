@@ -16,10 +16,10 @@ function UpdateUserDataForm() {
     },
   } = useUser();
 
+  const { updateUser, isUpdating } = useUpdateUser();
+
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);
-
-  const { mutate: updateUser, isLoading: isUpdating } = useUpdateUser();
 
   function handleSubmit(e) {
     e.preventDefault();
