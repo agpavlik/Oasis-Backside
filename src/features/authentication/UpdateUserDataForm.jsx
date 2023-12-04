@@ -8,7 +8,6 @@ import Input from "../../ui/Input";
 import { useUpdateUser } from "./useUpdateUser";
 
 function UpdateUserDataForm() {
-  // We don't need the loading state
   const {
     user: {
       email,
@@ -30,7 +29,6 @@ function UpdateUserDataForm() {
       {
         onSuccess: () => {
           setAvatar(null);
-          // Resetting form using .reset() that's available on all HTML form elements, otherwise the old filename will stay displayed in the UI
           e.target.reset();
         },
       }
@@ -38,7 +36,6 @@ function UpdateUserDataForm() {
   }
 
   function handleCancel(e) {
-    // We don't even need preventDefault because this button was designed to reset the form (remember, it has the HTML attribute 'reset')
     setFullName(currentFullName);
     setAvatar(null);
   }
@@ -63,7 +60,6 @@ function UpdateUserDataForm() {
           id="avatar"
           accept="image/*"
           onChange={(e) => setAvatar(e.target.files[0])}
-          // We should also validate that it's actually an image, but never mind
         />
       </FormRow>
       <FormRow>
