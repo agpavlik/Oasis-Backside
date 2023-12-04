@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 import DarkModeToggle from "./DarkModeToggle";
 
 const StyledHeaderMenu = styled.ul`
+  float: right;
   display: flex;
   gap: 0.4rem;
+  margin-right: 40px;
 `;
 
 function HeaderMenu() {

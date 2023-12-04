@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useUser } from "./useUser";
 
 const StyledUserAvatar = styled.div`
+  float: right;
   display: flex;
   gap: 1.2rem;
   align-items: center;
